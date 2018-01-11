@@ -20,7 +20,8 @@ if sys.platform.startswith('linux'):
 
     if sys.version_info.major == 3:
         minor_str = str(sys.version_info.minor)
-        boost_libs = ["boost_python-py3" + minor_str]
+        #boost_libs = ["boost_python-py3" + minor_str]
+        boost_libs = ["boost_python-py36"]
     else:
         boost_libs = ["boost_python"]
     extension_modules = [
