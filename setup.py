@@ -19,7 +19,8 @@ if sys.platform.startswith('linux'):
     glib_libs = [x.strip() for x in glib_libs if x]
 
     if sys.version_info.major == 3:
-        boost_libs = ["boost_python-py35"]
+        minor_str = str(sys.version_info.minor)
+        boost_libs = ["boost_python-py3" + minor_str]
     else:
         boost_libs = ["boost_python"]
     extension_modules = [
