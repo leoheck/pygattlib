@@ -20,8 +20,7 @@ if sys.platform.startswith('linux'):
 
     if sys.version_info.major == 3:
         minor_str = str(sys.version_info.minor)
-        #boost_libs = ["boost_python-py3" + minor_str]
-        boost_libs = ["boost_python-py36"]
+        boost_libs = ["boost_python-py3" + minor_str]
     else:
         boost_libs = ["boost_python"]
     extension_modules = [
@@ -52,7 +51,7 @@ else:
 
 setup(
     name='gattlib',
-    version="0.20150805",
+    version="0.20170303",
     description="Library to access Bluetooth LE devices",
     author="Oscar Acena",
     author_email="oscar.acena@gmail.com",
