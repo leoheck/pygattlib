@@ -7,9 +7,10 @@ TARGETS  = gattlib.so
 OBJECTS  = att.o crypto.o uuid.o gatt.o gattrib.o btio.o log.o utils.o \
 	   gattservices.o gattlib.o bindings.o beacon.o
 
-ifeq ($(PYTHON_VER),3)
-  PYTHON_CONFIG = python3-config
-  BOOST_PYTHON  = boost_python-py35
+ifeq "$(shell echo $(PYTHON_VER) | cut -d. -f1)" "3"
+	PYTHON_CONFIG = python3-config
+	PYLIB_VER = $(subst .,,$(PYTHON_VER))
+	BOOST_PYTHON  = boost_python-py$(PYLIB_VER)
 else
   PYTHON_CONFIG = python-config
   BOOST_PYTHON  = boost_python
