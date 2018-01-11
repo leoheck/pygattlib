@@ -1,6 +1,6 @@
 # -*- mode: makefile-gmake; coding: utf-8 -*-
 
-PYTHON_VER=2
+PYTHON_VER=3.6
 
 all:
 	@ echo "PYTHON_VER=$(PYTHON_VER)"
@@ -20,14 +20,6 @@ install:
 	@ $(RM) -fr dist
 	@ $(RM) -rf gattlib.egg-info
 
-
-python-2-and-3:
-	@ make clean
-	make -B
-	@ sudo make -B install
-	@ make clean
-	make -B PYTHON_VER=3
-	@ sudo make -B PYTHON_VER=3 install
 
 cleanall: clean
 	@ $(RM) -rf build
